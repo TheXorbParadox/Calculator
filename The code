@@ -1,0 +1,30 @@
+using System;
+
+namespace Learn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {   
+            int principal = 0;
+            int rate = 0;
+            int time = 0;
+            
+            Console.WriteLine("Please enter the principal");
+            principal = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the rate");
+            rate = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the time");
+            time = Convert.ToInt32(Console.ReadLine());
+
+            int simpleInterest = ((principal * rate * time)/100);
+
+            Console.WriteLine($"Simple interest = ({principal} * {rate} * {time}) / 100 = {simpleInterest}");
+            
+            Console.WriteLine($"New amount = {principal} + {simpleInterest} = " +(principal + simpleInterest));
+            
+        }
+    }
+}
