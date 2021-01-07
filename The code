@@ -1,29 +1,68 @@
 using System;
 
-namespace Learn
+namespace ScientificCalculator
 {
     class Program
     {
         static void Main(string[] args)
         {   
-            int principal = 0;
-            int rate = 0;
-            int time = 0;
+            double principal = 0;
+            double rate = 0;
+            double time = 0;
             
+            Console.WriteLine("Please type 'si' to get Simple Interest -");
+            Console.WriteLine("si - Simple interest");
+
+            switch (Console.ReadLine())
+            {
+
+            case "si":
+
             Console.WriteLine("Please enter the principal");
             principal = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Please enter the rate");
+            Console.WriteLine("Please enter the rate (in percent)");
             rate = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Please enter the time");
+            Console.WriteLine("Please enter the time (in years)");
             time = Convert.ToInt32(Console.ReadLine());
 
-            int simpleInterest = ((principal * rate * time)/100);
+            double simpleInterest = ((principal * rate * time)/100);
 
             Console.WriteLine($"Simple interest = ({principal} * {rate} * {time}) / 100 = {simpleInterest}");
             
             Console.WriteLine($"New amount = {principal} + {simpleInterest} = " +(principal + simpleInterest));
+            
+            break;
+            }
+            Console.WriteLine("Do you want to continue? If yes then please type yes");
+
+            switch (Console.ReadLine())
+
+            {
+                case "yes":
+
+                Console.WriteLine("Please enter the principal");
+                principal = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Please enter the rate (in percent)");
+                rate = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Please eneter the time (in years)");
+                time = Convert.ToInt32(Console.ReadLine());
+
+                double timesInterest = 0;
+
+                Console.WriteLine("Please enter the number of time the interest will be compounded");
+                timesInterest = Convert.ToInt32(Console.ReadLine());
+
+
+                double compoundedAmount = (principal * Math.Pow((1 + rate/100), (timesInterest * time)));
+
+                Console.WriteLine($"Amount = {principal} * ( 1 + ({rate} / {100})) ^ ({time} * {timesInterest}) = {compoundedAmount}");
+                Console.WriteLine($"The compound interest is {compoundedAmount} - {principal} =" + (compoundedAmount-principal));
+                break;
+            }
             
         }
     }
