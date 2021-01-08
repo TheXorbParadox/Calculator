@@ -6,32 +6,32 @@ namespace ScientificCalculator
     {
         static void Main(string[] args)
         {   
-            double principal = 0;
-            double rate = 0;
-            double time = 0;
+            double num1 = 0;
+            double num2 = 0;
+            double num3 = 0;
             
             Console.WriteLine("Please type 'si' to get Simple Interest -");
             Console.WriteLine("si - Simple interest");
 
             switch (Console.ReadLine())
             {
-
+                
             case "si":
 
             Console.WriteLine("Please enter the principal");
-            principal = Convert.ToInt32(Console.ReadLine());
+            num1 = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Please enter the rate (in percent)");
-            rate = Convert.ToInt32(Console.ReadLine());
+            num2 = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Please enter the time (in years)");
-            time = Convert.ToInt32(Console.ReadLine());
+            num3 = Convert.ToInt32(Console.ReadLine());
 
-            double simpleInterest = ((principal * rate * time)/100);
+            double simpleInterest = ((num1 * num2 * num3)/100);
 
-            Console.WriteLine($"Simple interest = ({principal} * {rate} * {time}) / 100 = {simpleInterest}");
+            Console.WriteLine($"Simple interest = ({num1} * {num2} * {num3}) / 100 = {simpleInterest}");
             
-            Console.WriteLine($"New amount = {principal} + {simpleInterest} = " +(principal + simpleInterest));
+            Console.WriteLine($"New amount = {num1} + {simpleInterest} = " +(num1 + simpleInterest));
             
             break;
             }
@@ -40,16 +40,17 @@ namespace ScientificCalculator
             switch (Console.ReadLine())
 
             {
+               
                 case "yes":
 
                 Console.WriteLine("Please enter the principal");
-                principal = Convert.ToInt32(Console.ReadLine());
+                num1 = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Please enter the rate (in percent)");
-                rate = Convert.ToInt32(Console.ReadLine());
+                num2 = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Please eneter the time (in years)");
-                time = Convert.ToInt32(Console.ReadLine());
+                num3 = Convert.ToInt32(Console.ReadLine());
 
                 double timesInterest = 0;
 
@@ -57,13 +58,35 @@ namespace ScientificCalculator
                 timesInterest = Convert.ToInt32(Console.ReadLine());
 
 
-                double compoundedAmount = (principal * Math.Pow((1 + rate/100), (timesInterest * time)));
+                double compoundedAmount = (num1 * Math.Pow((1 + num2/100), (timesInterest * num3)));
 
-                Console.WriteLine($"Amount = {principal} * ( 1 + ({rate} / {100})) ^ ({time} * {timesInterest}) = {compoundedAmount}");
-                Console.WriteLine($"The compound interest is {compoundedAmount} - {principal} =" + (compoundedAmount-principal));
+                Console.WriteLine($"Amount = {num1} * ( 1 + ({num2} / {100})) ^ {num3} * {timesInterest}) = {compoundedAmount}");
+                Console.WriteLine($"The compound interest is {compoundedAmount} - {num1} =" + (compoundedAmount-num1));
                 break;
             }
             
+            Console.WriteLine("Do you want to continue? If yes then press yes to get percentage");
+
+            switch (Console.ReadLine())
+
+            {   
+                case "yes":
+
+                float percent = 0;
+                float num = 0;
+
+                Console.WriteLine("Please enter the enter the percentage you want to get");
+                percent = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine($"Please entre the number whose {percent}% you want to get");
+                num = Convert.ToInt32(Console.ReadLine());
+
+                float percentage = ((percent / 100) * num);
+
+                Console.WriteLine($"The {percent}% of {num} is {percentage}");
+                break;
+
+            }
         }
     }
 }
