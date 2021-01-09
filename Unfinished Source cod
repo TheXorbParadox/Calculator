@@ -1,0 +1,128 @@
+using System;
+
+namespace ScientificCalculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {   
+            double num1 = 0;
+            double num2 = 0;
+            double num3 = 0;
+            
+            Console.WriteLine("Please type one of the followwing commands to do the maths-");
+            Console.WriteLine("si - Simple interest");
+            Console.WriteLine("p - principal");
+            Console.WriteLine("r - rate");
+            Console.WriteLine("t- time");
+
+            switch (Console.ReadLine())
+            {
+                
+            case "si":
+
+            Console.WriteLine("Please enter the principal");
+            num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the rate (in percent)");
+            num2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the time (in years)");
+            num3 = Convert.ToInt32(Console.ReadLine());
+
+            double simpleInterest = ((num1 * num2 * num3)/100);
+
+            Console.WriteLine($"Simple interest = ({num1} * {num2} * {num3}) / 100 = {simpleInterest}");
+            
+            Console.WriteLine($"New amount = {num1} + {simpleInterest} = " +(num1 + simpleInterest));
+            break;
+
+            case "p":
+
+            Console.WriteLine("Please enter the simple interest");
+            num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the rate (in percentage)");
+            num2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the time (in years)");
+            num3 = Convert.ToInt32(Console.ReadLine());
+
+            double p = ((num1*100)/(num2 * num3));//((num1*num3)/(num1 * 100));
+
+            Console.WriteLine($"Principal = {num1}*100/{num2}*{num3} = {p}");
+            break;
+
+            case "r":
+            Console.WriteLine("Please enter the simple interest");
+            num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the principal");
+            num2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the time (In years)");
+            num3 = Convert.ToInt32(Console.ReadLine());
+
+            double r = ((num1*num3)/(num1 * 100)); //((num1 * 100) / (num2 * num3));
+
+            Console.WriteLine($"Rate = ({num1} *100) / {num2} * {num3} = {r}%");
+
+            break;
+            }
+            Console.WriteLine("Do you want to continue? If yes then please type yes");
+
+            switch (Console.ReadLine())
+
+            {
+               
+                case "yes":
+
+                Console.WriteLine("Please enter the principal");
+                num1 = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Please enter the rate (in percent)");
+                num2 = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Please eneter the time (in years)");
+                num3 = Convert.ToInt32(Console.ReadLine());
+
+                double timesInterest = 0;
+
+                Console.WriteLine("Please enter the number of time the interest will be compounded");
+                timesInterest = Convert.ToInt32(Console.ReadLine());
+
+
+                double compoundedAmount = (num1 * Math.Pow((1 + num2/100), (timesInterest * num3)));
+
+                Console.WriteLine($"Amount = {num1} * ( 1 + ({num2} / {100})) ^ {num3} * {timesInterest}) = {compoundedAmount}");
+                Console.WriteLine($"The compound interest is {compoundedAmount} - {num1} =" + (compoundedAmount-num1));
+                break;
+            }
+            
+            Console.WriteLine("Do you want to continue? If yes then press yes to get percentage");
+
+            switch (Console.ReadLine())
+
+            {   
+                case "yes":
+
+                float percent = 0;
+                float num = 0;
+
+                Console.WriteLine("Please enter the enter the percentage you want to get");
+                percent = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine($"Please entre the number whose {percent}% you want to get");
+                num = Convert.ToInt32(Console.ReadLine());
+
+                float percentage = ((percent / 100) * num);
+
+                Console.WriteLine($"The {percent}% of {num} is {percentage}");
+                break;
+
+                
+
+            }
+        }
+    }
+}
