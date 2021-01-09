@@ -7,3 +7,4 @@ This calculator can give decimal outputs but can't take decimal inputs, so if yo
 This may become my main future project.
 Okay so now it can give you the Compounded interest, just be sure to not put decimal numbers anywhere yet.
 And now it can give you the percentage.
+I added a new "Unfinished Source Code", It has the code that I am not sure if I want to aply to my program.
